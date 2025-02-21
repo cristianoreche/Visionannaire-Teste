@@ -1,0 +1,22 @@
+.input {
+  &__field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5eaec;
+    border-radius: 12px;
+    font-size: 15px;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:focus {
+      outline: 2px solid #ff5700;
+    }
+  }
+
+  &__error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}

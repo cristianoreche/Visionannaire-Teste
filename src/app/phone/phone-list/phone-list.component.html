@@ -1,0 +1,42 @@
+<div class="phone-list">
+  <h1 class="phone-list__title">Lista de Números</h1>
+  <div class="phone-list__header">
+    <div class="phone-list__search">
+      <app-input placeholder="Buscar número..." [control]="searchControl"></app-input>
+    </div>
+    <app-button variant="primary" routerLink="/phones/new"> Novo Número </app-button>
+  </div>
+  <div class="phone-list__table">
+    <table class="phone-list__table--content">
+      <thead>
+        <tr class="phone-list__table--header">
+          <th>ID</th>
+          <th>Número</th>
+          <th>Preço Mensal</th>
+          <th>Preço Config</th>
+          <th>Moeda</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="phone-list__table--row" *ngFor="let phone of filteredPhones">
+          <td>{{ phone.id }}</td>
+          <td>{{ phone.value }}</td>
+          <td>{{ phone.monthlyPrice }}</td>
+          <td>{{ phone.setupPrice }}</td>
+          <td>{{ phone.currency }}</td>
+          <td class="phone-list__actions">
+            <app-button variant="info" [routerLink]="['/phones/edit', phone.id]">Editar</app-button>
+            <app-button variant="danger" (click)="deletePhone(phone.id)">Excluir</app-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-pagination 
+    [totalItems]="filteredPhones.length" 
+    [itemsPerPage]="itemsPerPage" 
+    [currentPage]="currentPage"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
+</div>

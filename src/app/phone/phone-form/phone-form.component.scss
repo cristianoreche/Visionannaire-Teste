@@ -1,0 +1,40 @@
+.phone-form {
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__label {
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #1c2b33;
+  }
+
+  &__form {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  &__input,
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #e5eaec;
+    border-radius: 12px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+}

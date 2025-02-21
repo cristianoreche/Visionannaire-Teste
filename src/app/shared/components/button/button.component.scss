@@ -1,0 +1,54 @@
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: opacity 0.3s;
+
+  &--primary {
+    background-color: #ff5700;
+    color: white;
+  }
+
+  &--danger {
+    background-color: #f96782;
+    color: white;
+  }
+
+  &--success {
+    background-color: #3eb75e;
+    color: white;
+  }
+
+  &--info {
+    background-color: #5E81F4;
+    color: white;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  &__field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5eaec;
+    border-radius: 12px;
+    font-size: 15px;
+
+    &:focus {
+      outline: 2px solid #ff5700;
+    }
+  }
+
+  &__error {
+    color: #f96782;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}

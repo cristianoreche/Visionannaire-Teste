@@ -1,0 +1,11 @@
+<div class="input">
+  <input
+    class="input__field"
+    [type]="type"
+    [formControl]="control"
+    [placeholder]="placeholder"
+  >
+  <div class="input__error" *ngIf="control?.invalid && control?.touched">
+    Campo obrigatório!
+  </div>
+</div>

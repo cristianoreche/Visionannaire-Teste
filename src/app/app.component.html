@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="header__logo">
+    <a href="/" class="header__logo-link">Visionnaire Teste</a>
+  </div>
+  <nav class="header__nav">
+    <ul class="header__menu" [class.header__menu--active]="isMenuOpen">
+      <li class="header__menu-item">
+        <a routerLink="/phones" class="header__menu-link">Lista de Números</a>
+      </li>
+      <li class="header__menu-item">
+        <a routerLink="/phones/new" class="header__menu-link">Adicionar Número</a>
+      </li>
+    </ul>
+  </nav>
+  <button class="header__toggle" (click)="toggleMenu()">☰</button>
+</header>
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

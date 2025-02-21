@@ -1,0 +1,45 @@
+<div class="phone-form">
+  <h1 class="phone-form__title">{{ isEdit ? 'Editar' : 'Novo' }} Número</h1>
+  <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()" class="phone-form__form">
+    <div class="phone-form__field">
+      <div class="phone-form__label">Número:</div>
+      <app-input [control]="getControl('value')" placeholder="+55 84 99999-9999"></app-input>
+      <div *ngIf="phoneForm.get('value')?.invalid && phoneForm.get('value')?.touched" class="phone-form__error">
+        O número é obrigatório.
+      </div>
+    </div>
+    <div class="phone-form__field">
+      <small>Você deve selecionar a moeda, pois assim ele irá com o formato exato!</small>
+    </div>
+    <div class="phone-form__field">
+      <div class="phone-form__label">Moeda:</div>
+      <select [formControl]="getControl('currency')" (change)="onCurrencyChange($event)" class="phone-form__input">
+        <option value="">Selecione uma moeda</option>
+        <option value="BRL">Real Brasileiro (BRL)</option>
+        <option value="USD">Dólar Americano (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+      </select>
+    </div>
+    <div class="phone-form__field">
+      <div class="phone-form__label">Preço Mensal:</div>
+      <app-input [control]="getControl('monthlyPrice')" placeholder="Ex.: 0.03"></app-input>
+      <div *ngIf="phoneForm.get('monthlyPrice')?.invalid && phoneForm.get('monthlyPrice')?.touched"
+        class="phone-form__error">
+        O preço mensal é obrigatório e deve ser maior ou igual a zero.
+      </div>
+    </div>
+    <div class="phone-form__field">
+      <div class="phone-form__label">Preço de Configuração:</div>
+      <app-input [control]="getControl('setupPrice')" placeholder="Ex.: 3.40"></app-input>
+      <div *ngIf="phoneForm.get('setupPrice')?.invalid && phoneForm.get('setupPrice')?.touched"
+        class="phone-form__error">
+        O preço de configuração é obrigatório e deve ser maior ou igual a zero.
+      </div>
+    </div>
+    <div class="phone-form__actions">
+      <app-button variant="primary" type="submit" [disabled]="phoneForm.invalid">
+        {{ isEdit ? 'Atualizar' : 'Salvar' }}
+      </app-button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="pagination">
+  <app-button
+    variant="primary"
+    [disabled]="currentPage === 1"
+    (click)="onPageChange(currentPage - 1)"
+  >
+    Anterior
+  </app-button>
+
+  <span class="pagination__info">
+    Página {{ currentPage }} de {{ totalPages }}
+  </span>
+
+  <app-button
+    variant="primary"
+    [disabled]="currentPage === totalPages"
+    (click)="onPageChange(currentPage + 1)"
+  >
+    Próxima
+  </app-button>
+</div>
