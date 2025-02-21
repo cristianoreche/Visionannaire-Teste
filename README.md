@@ -57,11 +57,6 @@ localStorage.setItem('phones', JSON.stringify(phones));
 const phones = JSON.parse(localStorage.getItem('phones') || '[]');
 ```
 
-## Correções
-
-- **Máscara de Valores Monetários**: Corrigimos o comportamento ao trocar a moeda, garantindo que a máscara seja reaplicada corretamente.
-- **IDs Incrementais**: Alteramos a lógica de geração de IDs para usar um contador incremental, resultando em IDs menores e mais gerenciáveis.
-
 ## Como Rodar o Projeto
 
 1. Clone o repositório:
